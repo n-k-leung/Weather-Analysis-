@@ -1,0 +1,250 @@
+version: 2
+
+models:
+
+  # ── Transform ─────────────────────────────────────────────
+
+  - name: weather_transform
+    description: "Base transform layer with derived columns."
+    columns:
+      - name: city
+        data_tests:
+          - not_null
+
+      - name: date
+        data_tests:
+          - not_null
+
+      - name: temp_max
+        data_tests:
+          - not_null
+
+      - name: temp_mean
+        data_tests:
+          - not_null
+
+      - name: temp_min
+        data_tests:
+          - not_null
+
+      - name: precipitation_sum
+        data_tests:
+          - not_null
+
+      - name: weather_code
+        data_tests:
+          - not_null
+
+      - name: season
+        data_tests:
+          - not_null
+          - accepted_values:
+              values: ['Winter', 'Spring', 'Summer', 'Fall']
+
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns: [city, date]
+
+  # ── Analytics ─────────────────────────────────────────────
+
+  - name: trend_seasonality_analysis
+    description: "Monthly weather trends."
+    columns:
+      - name: city
+        data_tests:
+          - not_null
+
+      - name: year
+        data_tests:
+          - not_null
+
+      - name: month
+        data_tests:
+          - not_null
+
+      - name: season
+        data_tests:
+          - not_null
+          - accepted_values:
+              values: ['Winter', 'Spring', 'Summer', 'Fall']
+
+      - name: avg_temp
+        data_tests:
+          - not_null
+
+      - name: avg_apparent_temp
+        data_tests:
+          - not_null
+
+      - name: ma_3m_temp
+        data_tests:
+          - not_null
+
+      - name: ma_3m_apparent_temp
+        data_tests:
+          - not_null
+
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns: [city, year, month]
+
+  - name: anomaly_detection
+    description: "Daily anomaly detection model."
+    columns:
+      - name: city
+        data_tests:
+          - not_null
+
+      - name: year
+        data_tests:
+          - not_null
+
+      - name: month
+        data_tests:
+          - not_null
+
+      - name: season
+        data_tests:
+          - not_null
+
+      - name: total_days
+        data_tests:
+          - not_null
+
+      - name: heat_wave_days
+        data_tests:
+          - not_null
+
+      - name: cold_snap_days
+        data_tests:
+          - not_null
+
+      - name: heavy_rain_days
+        data_tests:
+          - not_null
+
+      - name: high_wind_days
+        data_tests:
+          - not_null
+
+      - name: extreme_uv_days
+        data_tests:
+          - not_null
+
+      - name: anomaly_days
+        data_tests:
+          - not_null
+
+      - name: anomaly_pct
+        data_tests:
+          - not_null
+
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns: [city, year, month]
+
+  - name: precipitation_analysis
+    description: "Rain and precipitation behavior."
+    columns:
+      - name: city
+        data_tests:
+          - not_null
+
+      - name: date
+        data_tests:
+          - not_null
+
+      - name: year
+        data_tests:
+          - not_null
+
+      - name: month
+        data_tests:
+          - not_null
+
+      - name: season
+        data_tests:
+          - not_null
+
+      - name: precipitation_sum
+        data_tests:
+          - not_null
+
+      - name: precipitation_probability_mean
+        data_tests:
+          - not_null
+
+      - name: is_rainy_day
+        data_tests:
+          - not_null
+          - accepted_values:
+              values: [0, 1]
+
+      - name: rainy_streak
+        data_tests:
+          - not_null
+
+      - name: dry_streak
+        data_tests:
+          - not_null
+
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns: [city, date]
+
+  - name: wind_comfort_analysis
+    description: "Wind and comfort scoring model."
+    columns:
+      - name: city
+        data_tests:
+          - not_null
+
+      - name: date
+        data_tests:
+          - not_null
+
+      - name: year
+        data_tests:
+          - not_null
+
+      - name: month
+        data_tests:
+          - not_null
+
+      - name: season
+        data_tests:
+          - not_null
+
+      - name: wind_speed_10m_max
+        data_tests:
+          - not_null
+
+      - name: comfort_score
+        data_tests:
+          - not_null
+
+      - name: wind_strength
+        data_tests:
+          - not_null
+          - accepted_values:
+              values:
+                - 'Calm'
+                - 'Breezy'
+                - 'Windy'
+                - 'Very Windy'
+                - 'Storm'
+
+      - name: comfort_category
+        data_tests:
+          - not_null
+          - accepted_values:
+              values:
+                - 'Very Comfortable'
+                - 'Comfortable'
+                - 'Moderate'
+                - 'Uncomfortable'
+                - 'Very Uncomfortable'
+
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns: [city, date]

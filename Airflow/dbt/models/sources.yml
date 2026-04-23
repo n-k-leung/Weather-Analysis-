@@ -1,0 +1,27 @@
+version: 2
+
+sources:
+  - name: raw
+    database: USER_DB_COYOTE
+    schema: raw
+    description: "Schema which stores raw tables from ETL"
+    tables:
+      - name: weather_data_lab2
+        identifier: weather_data_lab2
+  - name: analytics
+    database: USER_DB_COYOTE
+    schema: analytics
+    description: "Schema with stores analytics tables (ELT)"
+    tables:
+    - name: anomaly_detection
+      identifier: anomaly_detection
+      description: "anomaly_detection Analysis"
+    - name: precipitation_analysis
+      identifier: precipitation_analysis
+      description: "precipitation_analysis Analysis"
+    - name: trend_seasonality_analysis
+      identifier: trend_seasonality_analysis
+      description: "Trend & Seasonality Analysis"
+    - name: wind_comfort_analysis
+      identifier: wind_comfort_analysis
+      description: "wind_comfort_analysis Analysis"

@@ -1,0 +1,160 @@
+[2026-03-02T00:13:02.470+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2026-03-02T00:13:02.481+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: WeatherData_ETL.transform scheduled__2026-02-28T02:30:00+00:00 [queued]>
+[2026-03-02T00:13:02.485+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: WeatherData_ETL.transform scheduled__2026-02-28T02:30:00+00:00 [queued]>
+[2026-03-02T00:13:02.485+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 2
+[2026-03-02T00:13:02.496+0000] {taskinstance.py:2888} INFO - Executing <Task(_PythonDecoratedOperator): transform> on 2026-02-28 02:30:00+00:00
+[2026-03-02T00:13:02.506+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'WeatherData_ETL', 'transform', 'scheduled__2026-02-28T02:30:00+00:00', '--job-id', '4', '--raw', '--subdir', 'DAGS_FOLDER/weather_ETL.py', '--cfg-path', '/tmp/tmpjqz9srma']
+[2026-03-02T00:13:02.506+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=508) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2026-03-02T00:13:02.507+0000] {standard_task_runner.py:105} INFO - Job 4: Subtask transform
+[2026-03-02T00:13:02.507+0000] {standard_task_runner.py:72} INFO - Started process 513 to run task
+[2026-03-02T00:13:35.911+0000] {task_command.py:467} INFO - Running <TaskInstance: WeatherData_ETL.transform scheduled__2026-02-28T02:30:00+00:00 [running]> on host e252f6fde107
+[2026-03-02T00:13:35.975+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='natalie.leung@sjsu.com' AIRFLOW_CTX_DAG_OWNER='natleung' AIRFLOW_CTX_DAG_ID='WeatherData_ETL' AIRFLOW_CTX_TASK_ID='transform' AIRFLOW_CTX_EXECUTION_DATE='2026-02-28T02:30:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-02-28T02:30:00+00:00'
+[2026-03-02T00:13:35.976+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2026-03-02T00:13:35.979+0000] {python.py:240} INFO - Done. Returned value was: [{'latitude': '5.414444', 'longitude': '100.329167', 'date': '2025-12-31', 'temp_max': 31.7, 'temp_min': 26.8, 'weather_code': 3, 'city': 'Georgetown'}, {'latitude': '5.414444', 'longitude': '100.329167', 'date': '2026-01-01', 'temp_max': 32.1, 'temp_min': 26.8, 'weather_code': 80, 'city': 'Georgetown'}, {'latitude': '5.414444', 'longitude': '100.329167', 'date': '2026-01-02', 'temp_max': 32.4, 'temp_min': 24.9, 'weather_code': 95, 'city': 'Georgetown'}, {'latitude': '5.414444', 'longitude': '100.329167', 'date': '2026-01-03', 'temp_max': 30.8, 'temp_min': 26.1, 'weather_code': 61, 'city': 'Georgetown'}, {'latitude': '5.414444', 'longitude': '100.329167', 'date': '2026-01-04', 'temp_max': 33.0, 'temp_min': 25.8, 'weather_code': 3, 'city': 'Georgetown'}, {'latitude': '5.414444', 'longitude': '100.329167', 'date': '2026-01-05', 'temp_max': 33.1, 'temp_min': 26.6, 'weather_code': 3, 'city': 'Georgetown'}, {'latitude': '5.414444', 'longitude': '100.329167', 'date': '2026-01-06', 'temp_max': 31.8, 'temp_min': 26.9, 'weather_code': 95, 'city': 'Georgetown'}, {'latitude': '5.414444', 'longitude': '100.329167', 'date': '2026-01-07', 'temp_max': 31.8, 'temp_min': 26.6, 'weather_code': 95, 'city': 'Georgetown'}, {'latitude': '5.414444', 'longitude': '100.329167', 'date': '2026-01-08', 'temp_max': 32.4, 'temp_min': 26.0, 'weather_code': 80, 'city': 'Georgetown'}, {'latitude': '5.414444', 'longitude': '100.329167', 'date': '2026-01-09', 'temp_max': 32.4, 'temp_min': 25.3, 'weather_code': 3, 'city': 'Georgetown'}, {'latitude': '5.414444', 'longitude': '100.329167', 'date': '2026-01-10', 'temp_max': 32.4, 'temp_min': 25.2, 'weather_code': 3, 'city': 'Georgetown'}, {'latitude': '5.414444', 'longitude': '100.329167', 'date': '2026-01-11', 'temp_max': 31.6, 'temp_min': 24.3, 'weather_code': 3, 'city': 'Georgetown'}, {'latitude': '5.414444', 'longitude': '100.329167', 'date': '2026-01-12', 'temp_max': 32.1, 'temp_min': 25.1, 'weather_code': 3, 'city': 'Georgetown'}, {'latitude': '5.414444', 'longitude': '100.329167', 'date': '2026-01-13', 'temp_max': 32.4, 'temp_min': 26.3, 'weather_code': 3, 'city': 'Georgetown'}, {'latitude': '5.414444', 'longitude': '100.329167', 'date': '2026-01-14', 'temp_max': 32.2, 'temp_min': 25.9, 'weather_code': 3, 'city': 'Georgetown'}, {'latitude': '5.414444', 'longitude': '100.329167', 'date': '2026-01-15', 'temp_max': 32.2, 'temp_min': 26.1, 'weather_code': 3, 'city': 'Georgetown'}, {'latitude': '5.414444', 'longitude': '100.329167', 'date': '2026-01-16', 'temp_max': 32.2, 'temp_min': 25.8, 'weather_code': 3, 'city': 'Georgetown'}, {'latitude': '5.414444', 'longitude': '100.329167', 'date': '2026-01-17', 'temp_max': 32.0, 'temp_min': 25.8, 'weather_code': 3, 'city': 'Georgetown'}, {'latitude': '5.414444', 'longitude': '100.329167', 'date': '2026-01-18', 'temp_max': 32.9, 'temp_min': 25.8, 'weather_code': 3, 'city': 'Georgetown'}, {'latitude': '5.414444', 'longitude': '100.329167', 'date': '2026-01-19', 'temp_max': 32.4, 'temp_min': 25.7, 'weather_code': 3, 'city': 'Georgetown'}, {'latitude': '5.414444', 'longitude': '100.329167', 'date': '2026-01-20', 'temp_max': 31.9, 'temp_min': 25.1, 'weather_code': 3, 'city': 'Georgetown'}, {'latitude': '5.414444', 'longitude': '100.329167', 'date': '2026-01-21', 'temp_max': 32.5, 'temp_min': 25.1, 'weather_code': 3, 'city': 'Georgetown'}, {'latitude': '5.414444', 'longitude': '100.329167', 'date': '2026-01-22', 'temp_max': 32.9, 'temp_min': 25.1, 'weather_code': 3, 'city': 'Georgetown'}, {'latitude': '5.414444', 'longitude': '100.329167', 'date': '2026-01-23', 'temp_max': 33.4, 'temp_min': 25.0, 'weather_code': 3, 'city': 'Georgetown'}, {'latitude': '5.414444', 'longitude': '100.329167', 'date': '2026-01-24', 'temp_max': 33.1, 'temp_min': 25.8, 'weather_code': 3, 'city': 'Georgetown'}, {'latitude': '5.414444', 'longitude': '100.329167', 'date': '2026-01-25', 'temp_max': 33.8, 'temp_min': 26.4, 'weather_code': 3, 'city': 'Georgetown'}, {'latitude': '5.414444', 'longitude': '100.329167', 'date': '2026-01-26', 'temp_max': 33.7, 'temp_min': 25.9, 'weather_code': 3, 'city': 'Georgetown'}, {'latitude': '5.414444', 'longitude': '100.329167', 'date': '2026-01-27', 'temp_max': 33.6, 'temp_min': 25.9, 'weather_code': 3, 'city': 'Georgetown'}, {'latitude': '5.414444', 'longitude': '100.329167', 'date': '2026-01-28', 'temp_max': 33.6, 'temp_min': 25.6, 'weather_code': 80, 'city': 'Georgetown'}, {'latitude': '5.414444', 'longitude': '100.329167', 'date': '2026-01-29', 'temp_max': 33.2, 'temp_min': 26.1, 'weather_code': 3, 'city': 'Georgetown'}, {'latitude': '5.414444', 'longitude': '100.329167', 'date': '2026-01-30', 'temp_max': 33.4, 'temp_min': 26.3, 'weather_code': 2, 'city': 'Georgetown'}, {'latitude': '5.414444', 'longitude': '100.329167', 'date': '2026-01-31', 'temp_max': 33.7, 'temp_min': 25.7, 'weather_code': 80, 'city': 'Georgetown'}, {'latitude': '5.414444', 'longitude': '100.329167', 'date': '2026-02-01', 'temp_max': 34.4, 'temp_min': 26.1, 'weather_code': 3, 'city': 'Georgetown'}, {'latitude': '5.414444', 'longitude': '100.329167', 'date': '2026-02-02', 'temp_max': 34.8, 'temp_min': 26.1, 'weather_code': 3, 'city': 'Georgetown'}, {'latitude': '5.414444', 'longitude': '100.329167', 'date': '2026-02-03', 'temp_max': 33.8, 'temp_min': 25.6, 'weather_code': 3, 'city': 'Georgetown'}, {'latitude': '5.414444', 'longitude': '100.329167', 'date': '2026-02-04', 'temp_max': 33.4, 'temp_min': 26.8, 'weather_code': 3, 'city': 'Georgetown'}, {'latitude': '5.414444', 'longitude': '100.329167', 'date': '2026-02-05', 'temp_max': 33.0, 'temp_min': 26.4, 'weather_code': 3, 'city': 'Georgetown'}, {'latitude': '5.414444', 'longitude': '100.329167', 'date': '2026-02-06', 'temp_max': 32.0, 'temp_min': 26.0, 'weather_code': 80, 'city': 'Georgetown'}, {'latitude': '5.414444', 'longitude': '100.329167', 'date': '2026-02-07', 'temp_max': 31.9, 'temp_min': 26.6, 'weather_code': 80, 'city': 'Georgetown'}, {'latitude': '5.414444', 'longitude': '100.329167', 'date': '2026-02-08', 'temp_max': 33.4, 'temp_min': 26.6, 'weather_code': 80, 'city': 'Georgetown'}, {'latitude': '5.414444', 'longitude': '100.329167', 'date': '2026-02-09', 'temp_max': 33.7, 'temp_min': 25.9, 'weather_code': 3, 'city': 'Georgetown'}, {'latitude': '5.414444', 'longitude': '100.329167', 'date': '2026-02-10', 'temp_max': 33.6, 'temp_min': 27.1, 'weather_code': 3, 'city': 'Georgetown'}, {'latitude': '5.414444', 'longitude': '100.329167', 'date': '2026-02-11', 'temp_max': 33.0, 'temp_min': 26.3, 'weather_code': 95, 'city': 'Georgetown'}, {'latitude': '5.414444', 'longitude': '100.329167', 'date': '2026-02-12', 'temp_max': 33.0, 'temp_min': 27.3, 'weather_code': 95, 'city': 'Georgetown'}, {'latitude': '5.414444', 'longitude': '100.329167', 'date': '2026-02-13', 'temp_max': 31.0, 'temp_min': 26.1, 'weather_code': 96, 'city': 'Georgetown'}, {'latitude': '5.414444', 'longitude': '100.329167', 'date': '2026-02-14', 'temp_max': 32.2, 'temp_min': 26.6, 'weather_code': 96, 'city': 'Georgetown'}, {'latitude': '5.414444', 'longitude': '100.329167', 'date': '2026-02-15', 'temp_max': 31.5, 'temp_min': 26.0, 'weather_code': 95, 'city': 'Georgetown'}, {'latitude': '5.414444', 'longitude': '100.329167', 'date': '2026-02-16', 'temp_max': 29.5, 'temp_min': 26.0, 'weather_code': 95, 'city': 'Georgetown'}, {'latitude': '5.414444', 'longitude': '100.329167', 'date': '2026-02-17', 'temp_max': 31.1, 'temp_min': 25.7, 'weather_code': 95, 'city': 'Georgetown'}, {'latitude': '5.414444', 'longitude': '100.329167', 'date': '2026-02-18', 'temp_max': 32.1, 'temp_min': 26.5, 'weather_code': 96, 'city': 'Georgetown'}, {'latitude': '5.414444', 'longitude': '100.329167', 'date': '2026-02-19', 'temp_max': 33.4, 'temp_min': 25.9, 'weather_code': 80, 'city': 'Georgetown'}, {'latitude': '5.414444', 'longitude': '100.329167', 'date': '2026-02-20', 'temp_max': 34.3, 'temp_min': 26.6, 'weather_code': 80, 'city': 'Georgetown'}, {'latitude': '5.414444', 'longitude': '100.329167', 'date': '2026-02-21', 'temp_max': 32.9, 'temp_min': 26.5, 'weather_code': 80, 'city': 'Georgetown'}, {'latitude': '5.414444', 'longitude': '100.329167', 'date': '2026-02-22', 'temp_max': 31.8, 'temp_min': 27.1, 'weather_code': 3, 'city': 'Georgetown'}, {'latitude': '5.414444', 'longitude': '100.329167', 'date': '2026-02-23', 'temp_max': 31.7, 'temp_min': 26.9, 'weather_code': 3, 'city': 'Georgetown'}, {'latitude': '5.414444', 'longitude': '100.329167', 'date': '2026-02-24', 'temp_max': 31.1, 'temp_min': 26.6, 'weather_code': 80, 'city': 'Georgetown'}, {'latitude': '5.414444', 'longitude': '100.329167', 'date': '2026-02-25', 'temp_max': 30.8, 'temp_min': 26.2, 'weather_code': 96, 'city': 'Georgetown'}, {'latitude': '5.414444', 'longitude': '100.329167', 'date': '2026-02-26', 'temp_max': 31.5, 'temp_min': 26.1, 'weather_code': 95, 'city': 'Georgetown'}, {'latitude': '5.414444', 'longitude': '100.329167', 'date': '2026-02-27', 'temp_max': 32.1, 'temp_min': 26.7, 'weather_code': 3, 'city': 'Georgetown'}, {'latitude': '5.414444', 'longitude': '100.329167', 'date': '2026-02-28', 'temp_max': 31.9, 'temp_min': 27.3, 'weather_code': 3, 'city': 'Georgetown'}]
+[2026-03-02T00:13:36.000+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2026-03-02T00:13:36.001+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=WeatherData_ETL, task_id=transform, run_id=scheduled__2026-02-28T02:30:00+00:00, execution_date=20260228T023000, start_date=20260302T001302, end_date=20260302T001336
+[2026-03-02T00:13:36.038+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2026-03-02T00:13:36.048+0000] {taskinstance.py:3925} ERROR - Error scheduling downstream tasks. Skipping it as this is entirely optional optimisation. There might be various reasons for it, please take a look at the stack trace to figure out if the root cause can be diagnosed and fixed. See the issue https://github.com/apache/***/issues/39717 for details and an example problem. If you would like to get help in solving root cause, open discussion with all details with your managed service support or in Airflow repository.
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3921, in schedule_downstream_tasks
+    return TaskInstance._schedule_downstream_tasks(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/session.py", line 94, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3870, in _schedule_downstream_tasks
+    partial_dag = task.dag.partial_subset(
+                  ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dag.py", line 2664, in partial_subset
+    t.task_id: _deepcopy_task(t)
+               ^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dag.py", line 2661, in _deepcopy_task
+    return copy.deepcopy(t, memo)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/copy.py", line 143, in deepcopy
+    y = copier(memo)
+        ^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 1388, in __deepcopy__
+    setattr(result, k, copy.deepcopy(v, memo))
+                       ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/copy.py", line 136, in deepcopy
+    y = copier(x, memo)
+        ^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/copy.py", line 221, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+                             ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/copy.py", line 136, in deepcopy
+    y = copier(x, memo)
+        ^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/copy.py", line 201, in _deepcopy_tuple
+    y = [deepcopy(a, memo) for a in x]
+         ^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/copy.py", line 162, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/copy.py", line 259, in _reconstruct
+    state = deepcopy(state, memo)
+            ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/copy.py", line 136, in deepcopy
+    y = copier(x, memo)
+        ^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/copy.py", line 221, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+                             ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/copy.py", line 162, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/copy.py", line 259, in _reconstruct
+    state = deepcopy(state, memo)
+            ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/copy.py", line 136, in deepcopy
+    y = copier(x, memo)
+        ^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/copy.py", line 221, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+                             ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/copy.py", line 151, in deepcopy
+    rv = reductor(4)
+         ^^^^^^^^^^^
+TypeError: cannot pickle '_thread.lock' object
+[2026-03-02T00:13:36.053+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
+[2026-03-02T00:29:35.493+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2026-03-02T00:29:35.503+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: WeatherData_ETL.transform scheduled__2026-02-28T02:30:00+00:00 [queued]>
+[2026-03-02T00:29:35.507+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: WeatherData_ETL.transform scheduled__2026-02-28T02:30:00+00:00 [queued]>
+[2026-03-02T00:29:35.507+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 2
+[2026-03-02T00:29:35.515+0000] {taskinstance.py:2888} INFO - Executing <Task(_PythonDecoratedOperator): transform> on 2026-02-28 02:30:00+00:00
+[2026-03-02T00:29:35.522+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=336) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2026-03-02T00:29:35.523+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'WeatherData_ETL', 'transform', 'scheduled__2026-02-28T02:30:00+00:00', '--job-id', '3', '--raw', '--subdir', 'DAGS_FOLDER/weather_ETL.py', '--cfg-path', '/tmp/tmpz8n5uu_1']
+[2026-03-02T00:29:35.524+0000] {standard_task_runner.py:72} INFO - Started process 339 to run task
+[2026-03-02T00:29:35.524+0000] {standard_task_runner.py:105} INFO - Job 3: Subtask transform
+[2026-03-02T00:29:35.567+0000] {task_command.py:467} INFO - Running <TaskInstance: WeatherData_ETL.transform scheduled__2026-02-28T02:30:00+00:00 [running]> on host 85f52d0223b6
+[2026-03-02T00:29:35.626+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='natalie.leung@sjsu.com' AIRFLOW_CTX_DAG_OWNER='natleung' AIRFLOW_CTX_DAG_ID='WeatherData_ETL' AIRFLOW_CTX_TASK_ID='transform' AIRFLOW_CTX_EXECUTION_DATE='2026-02-28T02:30:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-02-28T02:30:00+00:00'
+[2026-03-02T00:29:35.627+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2026-03-02T00:29:35.629+0000] {python.py:240} INFO - Done. Returned value was: [{'latitude': '5.414444', 'longitude': '100.329167', 'date': '2025-12-31', 'temp_max': 31.7, 'temp_min': 26.8, 'weather_code': 3, 'city': 'Georgetown'}, {'latitude': '5.414444', 'longitude': '100.329167', 'date': '2026-01-01', 'temp_max': 32.1, 'temp_min': 26.8, 'weather_code': 80, 'city': 'Georgetown'}, {'latitude': '5.414444', 'longitude': '100.329167', 'date': '2026-01-02', 'temp_max': 32.4, 'temp_min': 24.9, 'weather_code': 95, 'city': 'Georgetown'}, {'latitude': '5.414444', 'longitude': '100.329167', 'date': '2026-01-03', 'temp_max': 30.8, 'temp_min': 26.1, 'weather_code': 61, 'city': 'Georgetown'}, {'latitude': '5.414444', 'longitude': '100.329167', 'date': '2026-01-04', 'temp_max': 33.0, 'temp_min': 25.8, 'weather_code': 3, 'city': 'Georgetown'}, {'latitude': '5.414444', 'longitude': '100.329167', 'date': '2026-01-05', 'temp_max': 33.1, 'temp_min': 26.6, 'weather_code': 3, 'city': 'Georgetown'}, {'latitude': '5.414444', 'longitude': '100.329167', 'date': '2026-01-06', 'temp_max': 31.8, 'temp_min': 26.9, 'weather_code': 95, 'city': 'Georgetown'}, {'latitude': '5.414444', 'longitude': '100.329167', 'date': '2026-01-07', 'temp_max': 31.8, 'temp_min': 26.6, 'weather_code': 95, 'city': 'Georgetown'}, {'latitude': '5.414444', 'longitude': '100.329167', 'date': '2026-01-08', 'temp_max': 32.4, 'temp_min': 26.0, 'weather_code': 80, 'city': 'Georgetown'}, {'latitude': '5.414444', 'longitude': '100.329167', 'date': '2026-01-09', 'temp_max': 32.4, 'temp_min': 25.3, 'weather_code': 3, 'city': 'Georgetown'}, {'latitude': '5.414444', 'longitude': '100.329167', 'date': '2026-01-10', 'temp_max': 32.4, 'temp_min': 25.2, 'weather_code': 3, 'city': 'Georgetown'}, {'latitude': '5.414444', 'longitude': '100.329167', 'date': '2026-01-11', 'temp_max': 31.6, 'temp_min': 24.3, 'weather_code': 3, 'city': 'Georgetown'}, {'latitude': '5.414444', 'longitude': '100.329167', 'date': '2026-01-12', 'temp_max': 32.1, 'temp_min': 25.1, 'weather_code': 3, 'city': 'Georgetown'}, {'latitude': '5.414444', 'longitude': '100.329167', 'date': '2026-01-13', 'temp_max': 32.4, 'temp_min': 26.3, 'weather_code': 3, 'city': 'Georgetown'}, {'latitude': '5.414444', 'longitude': '100.329167', 'date': '2026-01-14', 'temp_max': 32.2, 'temp_min': 25.9, 'weather_code': 3, 'city': 'Georgetown'}, {'latitude': '5.414444', 'longitude': '100.329167', 'date': '2026-01-15', 'temp_max': 32.2, 'temp_min': 26.1, 'weather_code': 3, 'city': 'Georgetown'}, {'latitude': '5.414444', 'longitude': '100.329167', 'date': '2026-01-16', 'temp_max': 32.2, 'temp_min': 25.8, 'weather_code': 3, 'city': 'Georgetown'}, {'latitude': '5.414444', 'longitude': '100.329167', 'date': '2026-01-17', 'temp_max': 32.0, 'temp_min': 25.8, 'weather_code': 3, 'city': 'Georgetown'}, {'latitude': '5.414444', 'longitude': '100.329167', 'date': '2026-01-18', 'temp_max': 32.9, 'temp_min': 25.8, 'weather_code': 3, 'city': 'Georgetown'}, {'latitude': '5.414444', 'longitude': '100.329167', 'date': '2026-01-19', 'temp_max': 32.4, 'temp_min': 25.7, 'weather_code': 3, 'city': 'Georgetown'}, {'latitude': '5.414444', 'longitude': '100.329167', 'date': '2026-01-20', 'temp_max': 31.9, 'temp_min': 25.1, 'weather_code': 3, 'city': 'Georgetown'}, {'latitude': '5.414444', 'longitude': '100.329167', 'date': '2026-01-21', 'temp_max': 32.5, 'temp_min': 25.1, 'weather_code': 3, 'city': 'Georgetown'}, {'latitude': '5.414444', 'longitude': '100.329167', 'date': '2026-01-22', 'temp_max': 32.9, 'temp_min': 25.1, 'weather_code': 3, 'city': 'Georgetown'}, {'latitude': '5.414444', 'longitude': '100.329167', 'date': '2026-01-23', 'temp_max': 33.4, 'temp_min': 25.0, 'weather_code': 3, 'city': 'Georgetown'}, {'latitude': '5.414444', 'longitude': '100.329167', 'date': '2026-01-24', 'temp_max': 33.1, 'temp_min': 25.8, 'weather_code': 3, 'city': 'Georgetown'}, {'latitude': '5.414444', 'longitude': '100.329167', 'date': '2026-01-25', 'temp_max': 33.8, 'temp_min': 26.4, 'weather_code': 3, 'city': 'Georgetown'}, {'latitude': '5.414444', 'longitude': '100.329167', 'date': '2026-01-26', 'temp_max': 33.7, 'temp_min': 25.9, 'weather_code': 3, 'city': 'Georgetown'}, {'latitude': '5.414444', 'longitude': '100.329167', 'date': '2026-01-27', 'temp_max': 33.6, 'temp_min': 25.9, 'weather_code': 3, 'city': 'Georgetown'}, {'latitude': '5.414444', 'longitude': '100.329167', 'date': '2026-01-28', 'temp_max': 33.6, 'temp_min': 25.6, 'weather_code': 80, 'city': 'Georgetown'}, {'latitude': '5.414444', 'longitude': '100.329167', 'date': '2026-01-29', 'temp_max': 33.2, 'temp_min': 26.1, 'weather_code': 3, 'city': 'Georgetown'}, {'latitude': '5.414444', 'longitude': '100.329167', 'date': '2026-01-30', 'temp_max': 33.4, 'temp_min': 26.3, 'weather_code': 2, 'city': 'Georgetown'}, {'latitude': '5.414444', 'longitude': '100.329167', 'date': '2026-01-31', 'temp_max': 33.7, 'temp_min': 25.7, 'weather_code': 80, 'city': 'Georgetown'}, {'latitude': '5.414444', 'longitude': '100.329167', 'date': '2026-02-01', 'temp_max': 34.4, 'temp_min': 26.1, 'weather_code': 3, 'city': 'Georgetown'}, {'latitude': '5.414444', 'longitude': '100.329167', 'date': '2026-02-02', 'temp_max': 34.8, 'temp_min': 26.1, 'weather_code': 3, 'city': 'Georgetown'}, {'latitude': '5.414444', 'longitude': '100.329167', 'date': '2026-02-03', 'temp_max': 33.8, 'temp_min': 25.6, 'weather_code': 3, 'city': 'Georgetown'}, {'latitude': '5.414444', 'longitude': '100.329167', 'date': '2026-02-04', 'temp_max': 33.4, 'temp_min': 26.8, 'weather_code': 3, 'city': 'Georgetown'}, {'latitude': '5.414444', 'longitude': '100.329167', 'date': '2026-02-05', 'temp_max': 33.0, 'temp_min': 26.4, 'weather_code': 3, 'city': 'Georgetown'}, {'latitude': '5.414444', 'longitude': '100.329167', 'date': '2026-02-06', 'temp_max': 32.0, 'temp_min': 26.0, 'weather_code': 80, 'city': 'Georgetown'}, {'latitude': '5.414444', 'longitude': '100.329167', 'date': '2026-02-07', 'temp_max': 31.9, 'temp_min': 26.6, 'weather_code': 80, 'city': 'Georgetown'}, {'latitude': '5.414444', 'longitude': '100.329167', 'date': '2026-02-08', 'temp_max': 33.4, 'temp_min': 26.6, 'weather_code': 80, 'city': 'Georgetown'}, {'latitude': '5.414444', 'longitude': '100.329167', 'date': '2026-02-09', 'temp_max': 33.7, 'temp_min': 25.9, 'weather_code': 3, 'city': 'Georgetown'}, {'latitude': '5.414444', 'longitude': '100.329167', 'date': '2026-02-10', 'temp_max': 33.6, 'temp_min': 27.1, 'weather_code': 3, 'city': 'Georgetown'}, {'latitude': '5.414444', 'longitude': '100.329167', 'date': '2026-02-11', 'temp_max': 33.0, 'temp_min': 26.3, 'weather_code': 95, 'city': 'Georgetown'}, {'latitude': '5.414444', 'longitude': '100.329167', 'date': '2026-02-12', 'temp_max': 33.0, 'temp_min': 27.3, 'weather_code': 95, 'city': 'Georgetown'}, {'latitude': '5.414444', 'longitude': '100.329167', 'date': '2026-02-13', 'temp_max': 31.0, 'temp_min': 26.1, 'weather_code': 96, 'city': 'Georgetown'}, {'latitude': '5.414444', 'longitude': '100.329167', 'date': '2026-02-14', 'temp_max': 32.2, 'temp_min': 26.6, 'weather_code': 96, 'city': 'Georgetown'}, {'latitude': '5.414444', 'longitude': '100.329167', 'date': '2026-02-15', 'temp_max': 31.5, 'temp_min': 26.0, 'weather_code': 95, 'city': 'Georgetown'}, {'latitude': '5.414444', 'longitude': '100.329167', 'date': '2026-02-16', 'temp_max': 29.5, 'temp_min': 26.0, 'weather_code': 95, 'city': 'Georgetown'}, {'latitude': '5.414444', 'longitude': '100.329167', 'date': '2026-02-17', 'temp_max': 31.1, 'temp_min': 25.7, 'weather_code': 95, 'city': 'Georgetown'}, {'latitude': '5.414444', 'longitude': '100.329167', 'date': '2026-02-18', 'temp_max': 32.1, 'temp_min': 26.5, 'weather_code': 96, 'city': 'Georgetown'}, {'latitude': '5.414444', 'longitude': '100.329167', 'date': '2026-02-19', 'temp_max': 33.4, 'temp_min': 25.9, 'weather_code': 80, 'city': 'Georgetown'}, {'latitude': '5.414444', 'longitude': '100.329167', 'date': '2026-02-20', 'temp_max': 34.3, 'temp_min': 26.6, 'weather_code': 80, 'city': 'Georgetown'}, {'latitude': '5.414444', 'longitude': '100.329167', 'date': '2026-02-21', 'temp_max': 32.9, 'temp_min': 26.5, 'weather_code': 80, 'city': 'Georgetown'}, {'latitude': '5.414444', 'longitude': '100.329167', 'date': '2026-02-22', 'temp_max': 31.8, 'temp_min': 27.1, 'weather_code': 3, 'city': 'Georgetown'}, {'latitude': '5.414444', 'longitude': '100.329167', 'date': '2026-02-23', 'temp_max': 31.7, 'temp_min': 26.9, 'weather_code': 3, 'city': 'Georgetown'}, {'latitude': '5.414444', 'longitude': '100.329167', 'date': '2026-02-24', 'temp_max': 31.1, 'temp_min': 26.6, 'weather_code': 80, 'city': 'Georgetown'}, {'latitude': '5.414444', 'longitude': '100.329167', 'date': '2026-02-25', 'temp_max': 30.8, 'temp_min': 26.2, 'weather_code': 96, 'city': 'Georgetown'}, {'latitude': '5.414444', 'longitude': '100.329167', 'date': '2026-02-26', 'temp_max': 31.5, 'temp_min': 26.1, 'weather_code': 95, 'city': 'Georgetown'}, {'latitude': '5.414444', 'longitude': '100.329167', 'date': '2026-02-27', 'temp_max': 32.1, 'temp_min': 26.7, 'weather_code': 3, 'city': 'Georgetown'}, {'latitude': '5.414444', 'longitude': '100.329167', 'date': '2026-02-28', 'temp_max': 31.9, 'temp_min': 27.3, 'weather_code': 3, 'city': 'Georgetown'}]
+[2026-03-02T00:29:35.644+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2026-03-02T00:29:35.645+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=WeatherData_ETL, task_id=transform, run_id=scheduled__2026-02-28T02:30:00+00:00, execution_date=20260228T023000, start_date=20260302T002935, end_date=20260302T002935
+[2026-03-02T00:29:35.658+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2026-03-02T00:29:35.665+0000] {taskinstance.py:3925} ERROR - Error scheduling downstream tasks. Skipping it as this is entirely optional optimisation. There might be various reasons for it, please take a look at the stack trace to figure out if the root cause can be diagnosed and fixed. See the issue https://github.com/apache/***/issues/39717 for details and an example problem. If you would like to get help in solving root cause, open discussion with all details with your managed service support or in Airflow repository.
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3921, in schedule_downstream_tasks
+    return TaskInstance._schedule_downstream_tasks(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/session.py", line 94, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3870, in _schedule_downstream_tasks
+    partial_dag = task.dag.partial_subset(
+                  ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dag.py", line 2664, in partial_subset
+    t.task_id: _deepcopy_task(t)
+               ^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dag.py", line 2661, in _deepcopy_task
+    return copy.deepcopy(t, memo)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/copy.py", line 143, in deepcopy
+    y = copier(memo)
+        ^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 1388, in __deepcopy__
+    setattr(result, k, copy.deepcopy(v, memo))
+                       ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/copy.py", line 136, in deepcopy
+    y = copier(x, memo)
+        ^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/copy.py", line 221, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+                             ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/copy.py", line 136, in deepcopy
+    y = copier(x, memo)
+        ^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/copy.py", line 201, in _deepcopy_tuple
+    y = [deepcopy(a, memo) for a in x]
+         ^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/copy.py", line 162, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/copy.py", line 259, in _reconstruct
+    state = deepcopy(state, memo)
+            ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/copy.py", line 136, in deepcopy
+    y = copier(x, memo)
+        ^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/copy.py", line 221, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+                             ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/copy.py", line 162, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/copy.py", line 259, in _reconstruct
+    state = deepcopy(state, memo)
+            ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/copy.py", line 136, in deepcopy
+    y = copier(x, memo)
+        ^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/copy.py", line 221, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+                             ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/copy.py", line 151, in deepcopy
+    rv = reductor(4)
+         ^^^^^^^^^^^
+TypeError: cannot pickle '_thread.lock' object
+[2026-03-02T00:29:35.670+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

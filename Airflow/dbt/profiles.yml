@@ -1,0 +1,13 @@
+build_mau:
+  outputs:
+    dev:
+      account: "sfedu02-eab27764"
+      database: "USER_DB_COYOTE"
+      password: "ky778NAT0527hl"
+      role: TRAINING_ROLE
+      threads: 1
+      schema: analytics
+      type: snowflake
+      user: "COYOTE"
+      warehouse: "COYOTE_WH"
+  target: dev
