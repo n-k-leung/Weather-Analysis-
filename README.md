@@ -30,7 +30,7 @@ Specifically our sql files that handle the transformation and analysis of the we
 - weather_transform.sql: takes raw weather data and transforms it for analysis
 
 ## Dashboard
-The Preset (Superset) dashboard is accessible through this link: https://2a501928.us1a.app.preset.io/superset/dashboard/9/?native_filters_key=Wl0UusbnAKY 
+The Preset (Superset) dashboard is viewable through this link: https://2a501928.us1a.app.preset.io/superset/dashboard/p/V9lBLnQRdjD/. Because this is built with a free preset account, only users invited are able to view this dashboard and workspace. 
 
 ### Screenshot
 ![Dashboard](/dashboard/weather_analysis_preset_dashboard.png)
@@ -48,6 +48,6 @@ The Preset (Superset) dashboard is accessible through this link: https://2a50192
 - Summer experiences the most abnormal weather days
 
 - ## Authors
-- Natalie Leung (natalie.leung@sjsu.edu)
-- Kazi Samina Maraj Mumu (kazisaminamaraj.mumu@sjsu.edu)
+- Natalie Leung
+- Kazi Samina Maraj Mumu
 
