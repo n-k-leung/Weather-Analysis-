@@ -24,3 +24,8 @@ The Preset (Superset) dashboard is accessible through this link: https://2a50192
 - There is a significant amount of dry spell streaks and it peaks during the summer months
 - People often feel that it is cooler than it actually is
 - Summer experiences the most abnormal weather days
+
+- ## Authors
+- Natalie Leung (natalie.leung@sjsu.edu)
+- Kazi Samina Maraj Mumu (kazisaminamaraj.mumu@sjsu.edu)
+
