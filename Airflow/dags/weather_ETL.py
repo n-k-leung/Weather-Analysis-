@@ -38,7 +38,6 @@ def extract(cities):
                 "apparent_temperature_min",
                 "precipitation_sum",
                 "rain_sum",
-                "showers_sum",
                 "precipitation_hours",
                 "precipitation_probability_max",
                 "precipitation_probability_mean",
@@ -87,7 +86,6 @@ def transform(all_city_data):
                 "apparent_temp_min": daily["apparent_temperature_min"][i],
                 "precipitation_sum": daily["precipitation_sum"][i],
                 "rain_sum": daily["rain_sum"][i],
-                "showers_sum": daily["showers_sum"][i],
                 "precipitation_hours": daily["precipitation_hours"][i],
                 "precipitation_probability_max": daily["precipitation_probability_max"][i],
                 "precipitation_probability_mean": daily["precipitation_probability_mean"][i],
@@ -117,7 +115,6 @@ def load(con, target_table, records):
                 apparent_temp_min FLOAT,
                 precipitation_sum FLOAT,
                 rain_sum FLOAT,
-                showers_sum FLOAT,
                 precipitation_hours FLOAT,
                 precipitation_probability_max FLOAT,
                 precipitation_probability_mean FLOAT,
@@ -134,15 +131,15 @@ def load(con, target_table, records):
 
         insert_sql = f"""
             INSERT INTO {target_table} (
-                latitude, longitude, date, temp_max, temp_mean, temp_min, apparent_temp_max, apparent_temp_mean, apparent_temp_min, precipitation_sum, rain_sum, showers_sum,
+                latitude, longitude, date, temp_max, temp_mean, temp_min, apparent_temp_max, apparent_temp_mean, apparent_temp_min, precipitation_sum, rain_sum,
                 precipitation_hours, precipitation_probability_max, precipitation_probability_mean, precipitation_probability_min, weather_code, wind_speed_10m_max, uv_index_max, uv_index_clear_sky_max, city
             ) VALUES (
-                %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s
+                %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s
             );
         """
         data = [
             (
-                r["latitude"], r["longitude"], r["date"], r["temp_max"], r["temp_mean"], r["temp_min"], r["apparent_temp_max"], r["apparent_temp_mean"], r["apparent_temp_min"], r["precipitation_sum"], r["rain_sum"], r["showers_sum"], 
+                r["latitude"], r["longitude"], r["date"], r["temp_max"], r["temp_mean"], r["temp_min"], r["apparent_temp_max"], r["apparent_temp_mean"], r["apparent_temp_min"], r["precipitation_sum"], r["rain_sum"],
                 r["precipitation_hours"], r["precipitation_probability_max"], r["precipitation_probability_mean"], r["precipitation_probability_min"], r["weather_code"], r["wind_speed_10m_max"], r["uv_index_max"], r["uv_index_clear_sky_max"],r["city"],
             )
             for r in records
