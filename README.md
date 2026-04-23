@@ -7,6 +7,23 @@ This is a lab that builds and end-to-end pipeline using Open Metro weather data,
 - WeatherData_ETL: extracts and loads 3 years of raw weather data
 - BuildETL_dbt_weather: transforms data for analysis
 
+
+These dag files are found under Airflow/dags
+
+## dbt Files
+Our dbt files are found under Airflow/dbt
+
+Specifically our sql files that handle the transformation and analysis of the weather data are the following files:
+
+/analytics
+    anomaly_detection.sql: analyzing anomaly weather days
+    precipitation_analysis.sql: analyzing precipitation, rain streak, and dry streak
+    trend_seasonality_analysis.sql: analyzing temperature trend
+    wind_comfort_analysis.sql: analyzing comfortablility 
+
+/transform
+    weather_transform.sql: takes raw weather data and transforms it for analysis
+
 ## Dashboard
 The Preset (Superset) dashboard is accessible through this link: https://2a501928.us1a.app.preset.io/superset/dashboard/9/?native_filters_key=Wl0UusbnAKY 
 
