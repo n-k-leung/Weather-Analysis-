@@ -3,9 +3,14 @@
 ## Overview
 This is a lab that builds and end-to-end pipeline using Open Metro weather data, Airflow, and dbt. A Preset dashboard is built to visualize the temperature trends, weather comfortability, abnormal weather, and rain and dry streak analysis. This analysis covers three cities: San Jose, San Francisco, and Cupertino.
 
+### Overall System Diagram
+The overall system architecture is illustrated below. The system follows a ELT-based design, where data is first ingested using an ETL pipeline and then transformed using dbt. Weather data is extracted from the Open-Meteo API using Apache Airflow, processed, and loaded into Snowflake raw tables. Dbt transformations are executed through Airflow to generate analytical models, which are stored in Snowflake analytics tables. Finally, a BI tool is used to visualize insights derived from the transformed data.
+
+![Dashboard](/diagram/workflow_diagram.png)
+
 ## Airflow Dags
 - WeatherData_ETL: extracts and loads 3 years of raw weather data
-- BuildETL_dbt_weather: transforms data for analysis
+- BuildETL_dbt_weather: transforms data for analysis, scheduled to run 15 minutes after WeatherData_ETL
 
 
 These dag files are found under Airflow/dags
@@ -16,13 +21,13 @@ Our dbt files are found under Airflow/dbt
 Specifically our sql files that handle the transformation and analysis of the weather data are the following files:
 
 /analytics
-    anomaly_detection.sql: analyzing anomaly weather days
-    precipitation_analysis.sql: analyzing precipitation, rain streak, and dry streak
-    trend_seasonality_analysis.sql: analyzing temperature trend
-    wind_comfort_analysis.sql: analyzing comfortablility 
+- anomaly_detection.sql: analyzing anomaly weather days
+- precipitation_analysis.sql: analyzing precipitation, rain streak, and dry streak
+- trend_seasonality_analysis.sql: analyzing temperature trend
+- wind_comfort_analysis.sql: analyzing comfortablility 
 
 /transform
-    weather_transform.sql: takes raw weather data and transforms it for analysis
+- weather_transform.sql: takes raw weather data and transforms it for analysis
 
 ## Dashboard
 The Preset (Superset) dashboard is accessible through this link: https://2a501928.us1a.app.preset.io/superset/dashboard/9/?native_filters_key=Wl0UusbnAKY 
